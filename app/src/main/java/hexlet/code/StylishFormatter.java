@@ -9,24 +9,46 @@ public class StylishFormatter {
     public static String format(List<Map<String, Object>> compareResult){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < compareResult.size(); i++) {
-            for (Map.Entry<String, Object> entry : compareResult.get(i).entrySet()) {
-                if (entry.getKey().equals("STATUS")) {
-                    sb.append(entry.getValue());
-                    sb.append(" ");
+            //TODO refactoring
+            String type = compareResult.get(i).get("STATUS").toString();
+                switch (type) {
+                    case "ADDED":
+                        sb.append("+ ");
+                        sb.append(compareResult.get(i).get("FIELD").toString());
+                        sb.append(": ");
+                        sb.append(compareResult.get(i).get("OLD_VALUE").toString());
+                        sb.append("\n");
+                        break;
+                    case "REMOVED":
+                        sb.append("- ");
+                        sb.append(compareResult.get(i).get("FIELD").toString());
+                        sb.append(": ");
+                        sb.append(compareResult.get(i).get("OLD_VALUE").toString());
+                        sb.append("\n");
+                        break;
+                    case "SAME":
+                        sb.append("  ");
+                        sb.append(compareResult.get(i).get("FIELD").toString());
+                        sb.append(": ");
+                        sb.append(compareResult.get(i).get("OLD_VALUE").toString());
+                        sb.append("\n");
+                        break;
+                    case "CHANGED":
+                        sb.append("- ");
+                        sb.append(compareResult.get(i).get("FIELD").toString());
+                        sb.append(": ");
+                        sb.append(compareResult.get(i).get("OLD_VALUE").toString());
+                        sb.append("\n");
+                        sb.append("+ ");
+                        sb.append(compareResult.get(i).get("FIELD").toString());
+                        sb.append(": ");
+                        sb.append(compareResult.get(i).get("NEW_VALUE").toString());
+                        sb.append("\n");
+                        break;
                 }
-                if (entry.getKey().equals("FIELD")) {
-                    sb.append(entry.getValue());
-                    sb.append(": ");
-                }
-                if (entry.getKey().equals("OLD_VALUE") || entry.getKey().equals("NEW_VALUE")) {
-                    sb.append(entry.getValue());
-                }
-            }
-            sb.append("\n");
+
         }
         var str = sb.toString();
-        str = str.replace("REMOVED", "-").replace("ADDED", "+")
-                .replace("SAME", " ");
         return str;
     }
 }
