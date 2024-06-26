@@ -15,7 +15,7 @@ class DifferTest {
 
     @Test
     void generate() throws IOException {
-        var actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json", "json");
+        var actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json", "stylish" );
         var result = readFile("src/test/resources/result.json");
         assertEquals(actual, result);
     }
