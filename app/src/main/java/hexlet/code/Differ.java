@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,12 +26,11 @@ public class Differ {
         return format(compareResult, format);
     }
 
+
     public static String readFile(String filepath) throws IOException {
         Path path = Paths.get(filepath);
-        Stream<String> lines = Files.lines(path);
-        String data = lines.collect(Collectors.joining(""));
-        lines.close();
-        return data;
+        String content = Files.readString(path);
+        return content;
     }
 
     private static String getFileType(String filepath) {
@@ -41,6 +41,7 @@ public class Differ {
     public static String format(List<Map<String, Object>> compareResult, String format) {
         return switch (format) {
             case "stylish" -> StylishFormatter.format(compareResult);
+            case "plain" -> StylishFormatter.format(compareResult);
             default -> throw new RuntimeException("format not supported");
         };
     }

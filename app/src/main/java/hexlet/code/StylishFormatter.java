@@ -53,4 +53,8 @@ public class StylishFormatter {
         }
         return sb.toString();
     }
+
+    public static String formatYaml(List<Map<String, Object>> compareResult) {
+        return "";
+    }
 }
