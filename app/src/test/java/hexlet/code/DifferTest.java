@@ -27,6 +27,16 @@ class DifferTest {
                 "src/test/resources/file6.json", "stylish");
         var resultNewJson = readFile("src/test/resources/result3.txt");
         assertEquals(actualNewJson, resultNewJson);
+
+        var actualPlainJson = Differ.generate("src/test/resources/file5.json",
+                "src/test/resources/file6.json", "plain");
+        var resultPlainJson = readFile("src/test/resources/plainResult.txt");
+        assertEquals(actualPlainJson, resultPlainJson);
+
+        var actualJsonFormat = Differ.generate("src/test/resources/file5.json",
+                "src/test/resources/file6.json", "json");
+        var resultJsonFormat = readFile("src/test/resources/resultJson.json");
+        assertEquals(actualJsonFormat, resultJsonFormat);
     }
 
     public static String readFile(String filepath) throws IOException {

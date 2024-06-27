@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Formatter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,9 +21,8 @@ public class Differ {
         Map<String, Object> file2 = Parser.parse(content2, fileFormat2);
 
         List<Map<String, Object>> compareResult = Comparator.compare(file1, file2);
-        return format(compareResult, format);
+        return Formatter.format(compareResult, format);
     }
-
 
     public static String readFile(String filepath) throws IOException {
         Path path = Paths.get(filepath);
@@ -33,13 +33,5 @@ public class Differ {
     private static String getFileType(String filepath) {
         var type = filepath.substring(filepath.lastIndexOf(".") + 1);
         return type;
-    }
-
-    public static String format(List<Map<String, Object>> compareResult, String format) {
-        return switch (format) {
-            case "stylish" -> StylishFormatter.format(compareResult);
-            case "plain" -> StylishFormatter.format(compareResult);
-            default -> throw new RuntimeException("format not supported");
-        };
     }
 }

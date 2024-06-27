@@ -1,7 +1,11 @@
 package hexlet.code;
 
-
-import java.util.*;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.TreeSet;
 
 public class Comparator {
 
@@ -32,8 +36,6 @@ public class Comparator {
                     line.put("OLD_VALUE", file1.get(keyStr));
                     line.put("NEW_VALUE", file2.get(keyStr));
                 }
-
-
             }
             result.add(line);
         }

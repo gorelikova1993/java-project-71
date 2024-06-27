@@ -1,10 +1,9 @@
-package hexlet.code;
+package hexlet.code.formatters;
 
 import java.util.List;
 import java.util.Map;
 
 public class StylishFormatter {
-
 
     public static String format(List<Map<String, Object>> compareResult) {
         StringBuilder sb = new StringBuilder();
@@ -52,9 +51,5 @@ public class StylishFormatter {
 
         }
         return sb.toString();
-    }
-
-    public static String formatYaml(List<Map<String, Object>> compareResult) {
-        return "";
     }
 }
