@@ -8,3 +8,5 @@ Project 2: Comparator
 [![Maintainability](https://api.codeclimate.com/v1/badges/d915348c8804ffc2edb8/maintainability)](https://codeclimate.com/github/gorelikova1993/java-project-71/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d915348c8804ffc2edb8/test_coverage)](https://codeclimate.com/github/gorelikova1993/java-project-71/test_coverage)
+
+[![asciicast](https://asciinema.org/a/eIJ7fDM5zjMcjUt1G5EP8TKYZ.svg)](https://asciinema.org/a/eIJ7fDM5zjMcjUt1G5EP8TKYZ)
