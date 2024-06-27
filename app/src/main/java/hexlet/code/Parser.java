@@ -20,7 +20,8 @@ public class Parser {
             case "yaml":
                 ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
                 return mapper.readValue(content, Map.class);
+            default:
+                throw new RuntimeException("format not supported");
         }
-        return Map.of();
     }
 }

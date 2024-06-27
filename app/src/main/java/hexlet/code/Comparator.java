@@ -1,11 +1,7 @@
 package hexlet.code;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeSet;
-import java.util.List;
+import java.util.*;
 
 public class Comparator {
 
@@ -28,7 +24,7 @@ public class Comparator {
                 line.put("OLD_VALUE", file2.get(key.toString()));
             }
             if (file1.containsKey(key.toString()) && file2.containsKey(key.toString())) {
-                if (file1.get(key.toString()).equals(file2.get(key.toString()))) {
+                if (Objects.equals(file1.get(keyStr), (file2.get(keyStr)))) {
                     line.put("STATUS", "SAME");
                     line.put("OLD_VALUE", file1.get(key.toString()));
                 } else {

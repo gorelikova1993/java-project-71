@@ -11,7 +11,7 @@ public class StylishFormatter {
         for (Map<String, Object> stringObjectMap : compareResult) {
             String type = stringObjectMap.get("STATUS").toString();
             String field = stringObjectMap.get("FIELD").toString();
-            String oldValue = stringObjectMap.get("OLD_VALUE").toString();
+            var oldValue = stringObjectMap.get("OLD_VALUE");
             switch (type) {
                 case "ADDED":
                     sb.append("+ ");
@@ -43,7 +43,7 @@ public class StylishFormatter {
                     sb.append("+ ");
                     sb.append(field);
                     sb.append(": ");
-                    sb.append(stringObjectMap.get("NEW_VALUE").toString());
+                    sb.append(stringObjectMap.get("NEW_VALUE"));
                     sb.append("\n");
                     break;
                 default:
