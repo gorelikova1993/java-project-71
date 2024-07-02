@@ -24,6 +24,10 @@ public class Differ {
         return Formatter.format(compareResult, format);
     }
 
+    public static String generate(String filepath1, String filepath2) throws IOException {
+        return generate(filepath1, filepath2, "plain");
+    }
+
     public static String readFile(String filepath) throws IOException {
         Path path = Paths.get(filepath);
         String content = Files.readString(path);
