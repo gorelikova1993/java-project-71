@@ -15,10 +15,16 @@ class DifferTest {
     @Test
     void generate() throws IOException {
         //nestedTest
+        //8 тестов (6 штук) + 2 без указания форматтера
         var actualNewJson = Differ.generate("src/test/resources/file5.json",
                 "src/test/resources/file6.json", "stylish");
         var resultNewJson = readFile("src/test/resources/result3.txt");
         assertEquals(actualNewJson, resultNewJson);
+
+        var actualNewJson2 = Differ.generate("src/test/resources/file5.json",
+                "src/test/resources/file6.json");
+        var resultNewJson2 = readFile("src/test/resources/plainResult.txt");
+        assertEquals(actualNewJson2, resultNewJson2);
 
         var actualPlainJson = Differ.generate("src/test/resources/file5.json",
                 "src/test/resources/file6.json", "plain");
