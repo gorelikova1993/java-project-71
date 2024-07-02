@@ -14,14 +14,6 @@ class DifferTest {
 
     @Test
     void generate() throws IOException {
-    //    var actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json", "stylish");
-      //  var result = readFile("src/test/resources/result2.txt");
-       // assertEquals(actual, result);
-
-        //var actualYaml = Differ.generate("src/test/resources/file3.yaml", "src/test/resources/file4.yaml", "plain");
-        //var resultYaml = readFile("src/test/resources/result2.txt");
-        //assertEquals(actualYaml, resultYaml);
-
         //nestedTest
         var actualNewJson = Differ.generate("src/test/resources/file5.json",
                 "src/test/resources/file6.json", "stylish");
