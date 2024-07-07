@@ -7,20 +7,21 @@ public class StylishFormatter {
 
     public static String format(List<Map<String, Object>> compareResult) {
         StringBuilder sb = new StringBuilder();
+        sb.append("{\n");
         for (Map<String, Object> stringObjectMap : compareResult) {
             String type = stringObjectMap.get("STATUS").toString();
             String field = stringObjectMap.get("FIELD").toString();
             var oldValue = stringObjectMap.get("OLD_VALUE");
             switch (type) {
                 case "ADDED":
-                    sb.append("+ ");
+                    sb.append(" + ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
                     break;
                 case "REMOVED":
-                    sb.append("- ");
+                    sb.append(" - ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
@@ -34,12 +35,12 @@ public class StylishFormatter {
                     sb.append("\n");
                     break;
                 case "CHANGED":
-                    sb.append("- ");
+                    sb.append(" - ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
-                    sb.append("+ ");
+                    sb.append(" + ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(stringObjectMap.get("NEW_VALUE"));
@@ -50,6 +51,7 @@ public class StylishFormatter {
             }
 
         }
+        sb.append("}");
         return sb.toString();
     }
 }
