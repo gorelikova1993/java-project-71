@@ -17,7 +17,7 @@ public class Parser {
                 ObjectMapper objectMapper = new ObjectMapper();
                 return objectMapper.readValue(content, new TypeReference<>() {
                 });
-            case "yaml":
+            case "yaml", "yml":
                 ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
                 return mapper.readValue(content, Map.class);
             default:
