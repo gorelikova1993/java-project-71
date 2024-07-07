@@ -28,7 +28,7 @@ public class StylishFormatter {
                     sb.append("\n");
                     break;
                 case "SAME":
-                    sb.append("  ");
+                    sb.append("   ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
