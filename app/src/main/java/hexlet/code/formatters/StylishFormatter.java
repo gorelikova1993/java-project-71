@@ -14,33 +14,33 @@ public class StylishFormatter {
             var oldValue = stringObjectMap.get("OLD_VALUE");
             switch (type) {
                 case "ADDED":
-                    sb.append(" + ");
+                    sb.append("  + ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
                     break;
                 case "REMOVED":
-                    sb.append(" - ");
+                    sb.append("  - ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
                     break;
                 case "SAME":
-                    sb.append("   ");
+                    sb.append("    ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
                     break;
                 case "CHANGED":
-                    sb.append(" - ");
+                    sb.append("  - ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(oldValue);
                     sb.append("\n");
-                    sb.append(" + ");
+                    sb.append("  + ");
                     sb.append(field);
                     sb.append(": ");
                     sb.append(stringObjectMap.get("NEW_VALUE"));
