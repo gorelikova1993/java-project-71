@@ -36,7 +36,25 @@ class DifferTest {
         var resultJsonFormat = readFile("src/test/resources/resultJson.json");
         assertEquals(actualJsonFormat, resultJsonFormat);
 
+        var actualYamlFormatPlain = Differ.generate("src/test/resources/file3.yaml",
+                "src/test/resources/file4.yaml", "plain");
+        var resultYamlFormatPlain = readFile("src/test/resources/plainResultYml.txt");
+        assertEquals(actualYamlFormatPlain, resultYamlFormatPlain);
 
+        var actualYmlStylish = Differ.generate("src/test/resources/file3.yaml",
+                "src/test/resources/file4.yaml", "stylish");
+        var resultYmlStylish = readFile("src/test/resources/stylishYmlResult.txt");
+        assertEquals(actualYmlStylish, resultYmlStylish);
+
+        var actualYmlStylish2 = Differ.generate("src/test/resources/file3.yaml",
+                "src/test/resources/file4.yaml");
+        var resultYmlStylish2 = readFile("src/test/resources/stylishYmlResult.txt");
+        assertEquals(actualYmlStylish2, resultYmlStylish2);
+
+        var actualYmlJsonFormat = Differ.generate("src/test/resources/file3.yaml",
+                "src/test/resources/file4.yaml", "json");
+        var resultYmlJsonFormat = readFile("src/test/resources/resultForYmlJson.txt");
+        assertEquals(actualYmlJsonFormat, resultYmlJsonFormat);
     }
 
     public static String readFile(String filepath) throws IOException {

@@ -1,0 +1,1 @@
+[{"STATUS":"REMOVED","FIELD":"follow","OLD_VALUE":false},{"STATUS":"SAME","FIELD":"host","OLD_VALUE":"hexlet.io"},{"STATUS":"REMOVED","FIELD":"proxy","OLD_VALUE":"123.234.53.22"},{"STATUS":"CHANGED","NEW_VALUE":20,"FIELD":"timeout","OLD_VALUE":50},{"STATUS":"ADDED","FIELD":"verbose","OLD_VALUE":true}]
